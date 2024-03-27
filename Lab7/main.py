@@ -3,7 +3,6 @@ employees.update( {"Кубиків" : "3-я Заводська вулиця, 2",
 
 searchin_list = ["Кузін", "Куравльов", "Кудін", "Кульков", "Кубиків"]
 
-
 for search_item in searchin_list:
     if search_item in employees:
         print("Робітник ", search_item, ", Проживає за адресою ", employees[search_item])
