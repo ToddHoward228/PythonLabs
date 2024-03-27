@@ -1,4 +1,3 @@
-
 print("\tЗавдання 1")
 
 a = 0.0
@@ -7,7 +6,6 @@ b = 0.0
 while(a <= 0.0 or b <= 0.0):
     a = float(input("Введіть a: "))
     b = float(input("Введіть b: "))    
-
 
 X: float;
 
