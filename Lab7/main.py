@@ -1,6 +1,3 @@
-from os import read
-
-
 def Show():
     print("\tСписок робітників")
     keys_list = list(employees.keys())
