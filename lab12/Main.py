@@ -8,7 +8,11 @@ def Show(dict_employees):
         
 def Search(dict_employees):
     key = input("Введіть прізвище для пошуку: ")
-    print(key + " \n\tАдреса – " + dict_employees[key]["adress"] + "\n\tПосада – " + dict_employees[key]["position"])
+    if key in dict_employees:
+        print(key + " \n\tАдреса – " + dict_employees[key]["adress"] + "\n\tПосада – " + dict_employees[key]["position"])
+    else:
+        print("Прізвище не знайдено")
+        
     
 def Search_First_Char(dict_employees):
     first_char = input("Введіть першу літеру прізвища: ")
@@ -39,28 +43,32 @@ def Add(dict_employees):
     with open("Employees.json", "w", encoding= "utf_8") as update_file:
         update_file.write(json.dumps(dict_employees))
 
-
-emloyees_file = open("Employees.json", "r", encoding= "utf_8")
-
-emloyees = json.load(emloyees_file)
-
-print("\
-Для пошуку за першою літерою введіть 0\n\
-Для пошуку за прізвищем введіть 1\n\
-Для виведення всіх працівників введіть 2\n\
-Для додавання працівника введіть 3\n\
-Для видалення працівника введіть 4\n\
-Для виходу введіть ентер\n")
-
-while(command_key != ""):
-    command_key = input("Введіть індекс команди _\b")
-    if command_key == "0":
-        Search_First_Char()
-    elif command_key == "1":
-        Search()
-    elif command_key == "2":
-        Show()
-    elif command_key == "3":
-        Add()
-    elif command_key == "4":
-        Delete()
+try:
+    emloyees_file = open("Employees.json", "r", encoding= "utf_8")
+    
+    emloyees = json.load(emloyees_file)
+    
+    print("\
+    Для пошуку за першою літерою введіть 0\n\
+    Для пошуку за прізвищем введіть 1\n\
+    Для виведення всіх працівників введіть 2\n\
+    Для додавання працівника введіть 3\n\
+    Для видалення працівника введіть 4\n\
+    Для виходу введіть ентер\n")
+    
+    command_key = " "
+    
+    while(command_key != ""):
+        command_key = input("Введіть індекс команди _\b")
+        if command_key == "0":
+            Search_First_Char(emloyees)
+        elif command_key == "1":
+            Search(emloyees)
+        elif command_key == "2":
+            Show(emloyees)
+        elif command_key == "3":
+            Add(emloyees)
+        elif command_key == "4":
+            Delete(emloyees)
+except:
+    print("Усе накрилось")
