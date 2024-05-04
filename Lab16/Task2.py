@@ -1,4 +1,4 @@
-﻿import nltk
+import nltk
 import string
 import re
 from nltk.corpus import stopwords
@@ -6,8 +6,10 @@ from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 
 file = open("Documentation-How-To-Use-Nuclear-Reactor.txt", "r")
+output_file = open("Output_File.txt", "w")
 
 text = file.read()
+file.close()
 
 print(text) # Вивід тексту
 
@@ -31,3 +33,6 @@ wl = WordNetLemmatizer()
 lem_words = list(map(wl.lemmatize, clear_words))
 
 print("\n\tЛемматизація відібраного тексту \n", lem_words)
+
+output_file.write("\tВідформатований текст \n" + ' '.join(root_words))
+output_file.close()
