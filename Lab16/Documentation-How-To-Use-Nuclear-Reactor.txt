@@ -1,0 +1,7 @@
+	The reactor has been used for nuclear education and research in Japan for
+more than half a century since its first criticality in 1961. The characteristics of UTRKINKI are described with the structures of fuel, moderator, reflector, core components and nuclear instrumentation in the reactor. Basic concepts of reactor physics
+parameters are complementally provided by explaining neutron flux, cross sections,
+reaction rates, neutron multiplication and reactivity, to understand the neutron characteristics of the reactor. Also, detailed information on the UTR-KINKI reactor
+operation is uniquely included in this chapter to fulfill the objective of contacting
+the reactor itself, together with nuclear regulations concerning safety instruction,
+radiation control, physical protection and nuclear fuel materials in nuclear facilities.
